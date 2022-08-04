@@ -61121,21 +61121,37 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./Clients": [
-		"./resources/js/Pages/Clients.jsx",
-		"resources_js_Pages_Clients_jsx"
+	"./Clients/Create": [
+		"./resources/js/Pages/Clients/Create.jsx",
+		"resources_js_Pages_Clients_Create_jsx"
 	],
-	"./Clients.jsx": [
-		"./resources/js/Pages/Clients.jsx",
-		"resources_js_Pages_Clients_jsx"
+	"./Clients/Create.jsx": [
+		"./resources/js/Pages/Clients/Create.jsx",
+		"resources_js_Pages_Clients_Create_jsx"
 	],
-	"./Index": [
-		"./resources/js/Pages/Index.jsx",
-		"resources_js_Pages_Index_jsx"
+	"./Clients/Index": [
+		"./resources/js/Pages/Clients/Index.jsx",
+		"resources_js_Pages_Clients_Index_jsx"
 	],
-	"./Index.jsx": [
-		"./resources/js/Pages/Index.jsx",
-		"resources_js_Pages_Index_jsx"
+	"./Clients/Index.jsx": [
+		"./resources/js/Pages/Clients/Index.jsx",
+		"resources_js_Pages_Clients_Index_jsx"
+	],
+	"./Clients/Show": [
+		"./resources/js/Pages/Clients/Show.jsx",
+		"resources_js_Pages_Clients_Show_jsx"
+	],
+	"./Clients/Show.jsx": [
+		"./resources/js/Pages/Clients/Show.jsx",
+		"resources_js_Pages_Clients_Show_jsx"
+	],
+	"./Home": [
+		"./resources/js/Pages/Home.jsx",
+		"resources_js_Pages_Home_jsx"
+	],
+	"./Home.jsx": [
+		"./resources/js/Pages/Home.jsx",
+		"resources_js_Pages_Home_jsx"
 	]
 };
 function webpackAsyncContext(req) {
@@ -61286,7 +61302,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Clients_jsx":1,"resources_js_Pages_Index_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Clients_Create_jsx":1,"resources_js_Pages_Clients_Index_jsx":1,"resources_js_Pages_Clients_Show_jsx":1,"resources_js_Pages_Home_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

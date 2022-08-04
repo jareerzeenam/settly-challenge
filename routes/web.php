@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -16,10 +17,11 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     // return view('welcome');
-    return Inertia::render('Index',[
+    sleep(2);
+
+    return Inertia::render('Home',[
         'foo' => 'bar',
     ]);
 });
-Route::get('/clients', function () {
-    return Inertia::render('Clients');
-});
+
+Route::resource('clients', ClientController::class);

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
+use App\Models\Client;
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
-use App\Models\Client;
+use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
@@ -15,7 +17,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Clients/Index',[
+            'clients'=> Client::all(),
+        ]);
     }
 
     /**
@@ -25,7 +29,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Clients/Create');
     }
 
     /**
@@ -34,9 +38,20 @@ class ClientController extends Controller
      * @param  \App\Http\Requests\StoreClientRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreClientRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required|unique:clients',
+            'email'=>'required|unique:clients'
+        ]);
+
+        Client::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'user_id' => rand(1,5),
+        ]);
+
+        return redirect()->route('clients.index')->with('message','Client was created!');
     }
 
     /**
@@ -47,7 +62,9 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return Inertia::render('Clients/Show',[
+            'client'=> $client,
+        ]);
     }
 
     /**
