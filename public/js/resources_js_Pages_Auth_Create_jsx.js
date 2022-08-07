@@ -1,10 +1,10 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Auth_Login_jsx"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Auth_Create_jsx"],{
 
-/***/ "./resources/js/Pages/Auth/Login.jsx":
-/*!*******************************************!*\
-  !*** ./resources/js/Pages/Auth/Login.jsx ***!
-  \*******************************************/
+/***/ "./resources/js/Pages/Auth/Create.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Auth/Create.jsx ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -34,7 +34,7 @@ function Login(props) {
 
   function login(e) {
     e.preventDefault();
-    post('/login');
+    post('/sigh-up');
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {

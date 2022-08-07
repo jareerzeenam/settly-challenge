@@ -18,7 +18,7 @@ class ClientController extends Controller
     public function index()
     {
         return Inertia::render('Clients/Index',[
-            'clients'=> Client::paginate(10),
+            'clients'=> auth()->user()->clients()->paginate(10),
         ]);
     }
 
@@ -35,7 +35,6 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreClientRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,7 +47,7 @@ class ClientController extends Controller
         Client::create([
             'name' => $request->name,
             'email' => $request->email,
-            'user_id' => rand(1,5),
+            'user_id' => auth()->user()->id,
         ]);
 
         return redirect()->route('clients.index')->with('message','Client was created!');

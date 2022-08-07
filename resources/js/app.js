@@ -13,9 +13,9 @@ createInertiaApp({
     resolve: (name) => {
         let page = import(`./Pages/${name}`);
 
-        if (page.layout === undefined) {
-            page.layout = Layout;
-        }
+        // if (page.layout === undefined) {
+        //     page.layout = Layout;
+        // }
         return page;
     },
 

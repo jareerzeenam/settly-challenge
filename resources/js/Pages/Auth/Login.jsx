@@ -1,5 +1,5 @@
 import React from 'react'
-import { useForm, Head } from '@inertiajs/inertia-react'
+import { useForm, Head, Link } from '@inertiajs/inertia-react'
 import Layout from '../../Shared/Layout'
 
 export default function Login(props) {
@@ -40,6 +40,7 @@ export default function Login(props) {
                       <button className="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500" >Log In</button>
                   </div>
               </form>
+              <p>No account yet? <Link className='text-blue-600' href='/sign-up'>Create one here.</Link></p>  
           </section>
         </main>
       </Layout>

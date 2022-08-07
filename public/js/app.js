@@ -144,11 +144,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   // resolve: (name) => require(`./Pages/${name}`),
   // resolve: (name) => import(`./Pages/${name}`),
   resolve: function resolve(name) {
-    var page = __webpack_require__("./resources/js/Pages lazy recursive ^\\.\\/.*$")("./".concat(name));
-
-    if (page.layout === undefined) {
-      page.layout = _Shared_Layout__WEBPACK_IMPORTED_MODULE_5__["default"];
-    }
+    var page = __webpack_require__("./resources/js/Pages lazy recursive ^\\.\\/.*$")("./".concat(name)); // if (page.layout === undefined) {
+    //     page.layout = Layout;
+    // }
 
     return page;
   },
@@ -233,6 +231,14 @@ var map = {
 	"./Auth/Login.jsx": [
 		"./resources/js/Pages/Auth/Login.jsx",
 		"resources_js_Pages_Auth_Login_jsx"
+	],
+	"./Auth/SignUp": [
+		"./resources/js/Pages/Auth/SignUp.jsx",
+		"resources_js_Pages_Auth_SignUp_jsx"
+	],
+	"./Auth/SignUp.jsx": [
+		"./resources/js/Pages/Auth/SignUp.jsx",
+		"resources_js_Pages_Auth_SignUp_jsx"
 	],
 	"./Clients/Create": [
 		"./resources/js/Pages/Clients/Create.jsx",
