@@ -33,10 +33,10 @@ function Layout(_ref) {
           className: "flex items-center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
             className: "font-bold text-lg",
-            children: " My App"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+            children: " Settly Challenge"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
             className: "text-sm ml-4",
-            children: ["Welcome Back, ", auth.user.username, "!"]
+            children: auth.user.username ? 'Welcome Back ' + auth.user.username : null
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_NavLink__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
       })

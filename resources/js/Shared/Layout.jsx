@@ -9,8 +9,8 @@ export default function Layout({children}) {
     <section className='p-6 bg-gray-200'>
         <header className='flex justify-between'>
         <div className='flex items-center'>
-          <h1 className='font-bold text-lg'> My App</h1>
-          <p className='text-sm ml-4'>Welcome Back, {auth.user.username}!</p>
+          <h1 className='font-bold text-lg'> Settly Challenge</h1>
+          <p className='text-sm ml-4'>{auth.user.username ? 'Welcome Back '+ auth.user.username : null}</p>
         </div>
             <NavLink></NavLink>
         </header>
