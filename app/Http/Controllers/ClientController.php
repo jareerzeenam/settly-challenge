@@ -18,7 +18,7 @@ class ClientController extends Controller
     public function index()
     {
         return Inertia::render('Clients/Index',[
-            'clients'=> Client::all(),
+            'clients'=> Client::paginate(10),
         ]);
     }
 

@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ClientController;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +16,19 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    sleep(2);
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
 
-    return Inertia::render('Home',[
-        'foo' => 'bar',
-    ]);
+Route::middleware('auth')->group(function(){
+
+    Route::get('/', function () {
+        // return view('welcome');
+        sleep(2);
+
+        return Inertia::render('Home',[
+            'foo' => 'bar',
+        ]);
+    });
+
+    Route::resource('clients', ClientController::class);
 });
-
-Route::resource('clients', ClientController::class);
