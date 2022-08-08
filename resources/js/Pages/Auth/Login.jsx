@@ -1,6 +1,5 @@
 import React from 'react'
 import { useForm, Head, Link } from '@inertiajs/inertia-react'
-import Layout from '../../Shared/Layout'
 
 export default function Login(props) {
 
@@ -16,12 +15,10 @@ export default function Login(props) {
     }
 
   return (
-    <div>
+    <div className='bg-blue-300'>
       <Head title='App - Login'/>
-
-      <Layout>
-        <main className='grid place-item-center '>
-          <section className='bg-white p-8 rounded-xl max-w-md mx-auto border'>
+        <main class="grid place-items-center min-h-screen">
+          <section class="bg-white p-8 rounded-xl max-w-md mx-auto border">
             <h1 className="text-3xl">Login</h1>
               <form onSubmit={login} method="POST" className="max-w-md mx-auto mt-8">
                   <div className="mb-6">
@@ -37,13 +34,12 @@ export default function Login(props) {
                   </div>
 
                   <div className="mb-6">
-                      <button className="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500" >Log In</button>
+                      <button className="w-full bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 btn-lg" >Log In</button>
                   </div>
               </form>
               <p>No account yet? <Link className='text-blue-600' href='/sign-up'>Create one here.</Link></p>  
           </section>
         </main>
-      </Layout>
     </div>
   )
   }
