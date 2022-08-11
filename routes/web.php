@@ -23,15 +23,5 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth');
 
 Route::middleware('auth')->group(function(){
-
-    // Route::get('/', function () {
-    //     // return view('welcome');
-    //     sleep(2);
-
-    //     return Inertia::render('Home',[
-    //         'foo' => 'bar',
-    //     ]);
-    // })->name('index');
-
     Route::resource('/clients', ClientController::class);
 });
