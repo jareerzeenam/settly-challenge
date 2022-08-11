@@ -10,7 +10,7 @@ export default function Layout({children}) {
         <header className='flex justify-between'>
         <div className='flex items-center'>
           <h1 className='font-bold text-lg'> Settly Challenge</h1>
-          <p className='text-sm ml-4'>{auth.user.username ? 'Welcome Back '+ auth.user.username : null}</p>
+          <p className='text-sm ml-4'>{auth.user.username ? 'Hi '+ auth.user.username+ ' welcome to your admin account!' : null}</p>
         </div>
             <NavLink></NavLink>
         </header>

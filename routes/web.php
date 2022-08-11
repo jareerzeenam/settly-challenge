@@ -16,7 +16,7 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('/sign-up', [LoginController::class, 'create']);
 Route::post('/sign-up', [LoginController::class, 'signup']);
 Route::post('/login', [LoginController::class, 'store']);
@@ -24,14 +24,14 @@ Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth');
 
 Route::middleware('auth')->group(function(){
 
-    Route::get('/', function () {
-        // return view('welcome');
-        sleep(2);
+    // Route::get('/', function () {
+    //     // return view('welcome');
+    //     sleep(2);
 
-        return Inertia::render('Home',[
-            'foo' => 'bar',
-        ]);
-    });
+    //     return Inertia::render('Home',[
+    //         'foo' => 'bar',
+    //     ]);
+    // })->name('index');
 
-    Route::resource('clients', ClientController::class);
+    Route::resource('/clients', ClientController::class);
 });

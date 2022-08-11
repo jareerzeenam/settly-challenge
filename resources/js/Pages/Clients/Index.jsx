@@ -9,29 +9,13 @@ export default function index({clients}) {
     <div>
       <Head title='App - Clients'/>
       <Layout>
-          {/* <div>Clients</div> */}
           {flash.message && (
             <div className="alert">{flash.message}</div>
           )}
-          {/* <ul>
-              {clients.map(client => (
-                  <li key={client.id}><Link href={`/clients/${client.id}`}>{client.name}</Link></li>
-              ))}
-          </ul> */}
-
-
-
-
-
               <div className="flex justify-between mb-6">
-
-                    <div className="flex items-center">
-                        <h1 className="text-3xl font-bold">Clients</h1>
-
-                        {/* <Link v-if="can.createUser" href="/users/create" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white ml-5 px-2 border border-blue-500 hover:border-transparent rounded" >New User </Link> */}
-                    </div>
-
-                    {/* <input v-model="search" type="text" placeholder="Search..." class="border px-2 rounded-lg"> */}
+                <div className="flex items-center">
+                    <h1 className="text-3xl font-bold">Clients</h1>
+                </div>
               </div>
 
             <div className="flex flex-col">
@@ -51,9 +35,6 @@ export default function index({clients}) {
                                   </div>
                                 </div>
                               </td>
-                            {/* <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                              <Link href={`/clients/${client.id}/edit`} className="text-indigo-600 hover:text-indigo-900">Edit</Link>
-                            </td> */}
                           </tr>
                         ))}
                       </tbody>

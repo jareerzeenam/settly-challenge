@@ -40,13 +40,20 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required|unique:clients',
-            'email'=>'required|unique:clients'
+            'name'=>'required',
+            'email'=>'required|unique:clients',
+            'avatar'=>'sometimes',
         ]);
+
+        if($request->hasFile('avatar')){
+            $filename = $request->avatar->getClientOriginalName();
+            $request->avatar->storeAs('images',$filename,'public');
+        }
 
         Client::create([
             'name' => $request->name,
             'email' => $request->email,
+            'avatar' => $filename,
             'user_id' => auth()->user()->id,
         ]);
 
@@ -61,6 +68,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
+        // dd(asset('images/my_signature.png'));
         return Inertia::render('Clients/Show',[
             'client'=> $client,
         ]);

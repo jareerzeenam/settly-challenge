@@ -4,8 +4,13 @@ import { useForm, Head, Link } from '@inertiajs/inertia-react'
 export default function SignUp(props) {
 
     const { data, setData, post, processing, errors } = useForm({
+        name: '',        
+        surname: '',        
         email: '',
+        email_confirmation: '',        
         password: '',        
+        password_confirmation: '',        
+        'g-recaptcha-response': '',        
       }) 
 
     function signUp(e){
@@ -69,7 +74,7 @@ export default function SignUp(props) {
                       <button className="w-full bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 btn-lg" >Create Account</button>
                   </div>
               </form>
-              <p>Already have an account? <Link className='text-blue-600' href='/login'>Login here.</Link></p>  
+              <p>Already have an account? <Link className='text-blue-600' href='/'>Login here.</Link></p>  
           </section>
         </main>
     </div>

@@ -21,8 +21,13 @@ __webpack_require__.r(__webpack_exports__);
 
 function SignUp(props) {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    name: '',
+    surname: '',
     email: '',
-    password: ''
+    email_confirmation: '',
+    password: '',
+    password_confirmation: '',
+    'g-recaptcha-response': ''
   }),
       data = _useForm.data,
       setData = _useForm.setData,
@@ -176,7 +181,7 @@ function SignUp(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
           children: ["Already have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
             className: "text-blue-600",
-            href: "/login",
+            href: "/",
             children: "Login here."
           })]
         })]

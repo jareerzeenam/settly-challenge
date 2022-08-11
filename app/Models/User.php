@@ -19,7 +19,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
         'email',
+        'avatar',
         'password',
     ];
 
@@ -41,6 +43,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+     /**
+     * Get the user's first name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    protected function getFullNameAttribute()
+    {
+        return $this->name .' '. $this->surname;
+    }
 
     public function clients()
     {
